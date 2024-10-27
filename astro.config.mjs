@@ -1,27 +1,25 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
 import tailwind from "@astrojs/tailwind";
-
 import icon from "astro-icon";
-
 import sitemap from "@astrojs/sitemap";
-
 import vercel from "@astrojs/vercel/serverless";
-
 import partytown from "@astrojs/partytown";
-
-import react from "@astrojs/react";
-
-
+import { site_url } from "./src/const";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon(), sitemap({
-    filter: (page) =>
-      page !== "https://boscodisantantonio.it/cookie_policy/" && page !== "https://boscodisantantonio.it/privacy_policy/",
-  }), partytown(), react()],
-  site: "https://boscodisantantonio.it",
+  integrations: [
+    tailwind(),
+    icon(),
+    sitemap({
+      filter: (page) =>
+        page !== { site_url } + "/cookie_policy/" &&
+        page !== { site_url } + "/privacy_policy/",
+    }),
+    partytown(),
+  ],
+  site: site_url,
   output: "hybrid",
   adapter: vercel(),
 });
