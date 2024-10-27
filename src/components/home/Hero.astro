@@ -2,7 +2,7 @@
 export const prerender = false;
 import ContactButton from "@components/Shared/ContactButton.astro";
 import Swiper from "@components/Shared/Swiper.astro";
-import { Image, Picture } from "astro:assets";
+import { Image } from "astro:assets";
 
 const autunno = await Astro.glob("../../assets/img/hero/autunno/*");
 const primavera = await Astro.glob("../../assets/img/hero/primavera/*");
@@ -49,8 +49,9 @@ const seasonImage = seasonImages[currentSeason];
             src={image.default}
             alt="slide"
             class="absolute object-center w-full h-full object-cover zoom"
+            width={1920}
+            height={900}
             widths={[480, 880, 1500, image.default.width]}
-            sizes={`(max-width: 360px) 480px, (max-width: 720px) 880px, (max-width: 1600px) 1500px, ${image.default.width}px`}
             loading="lazy"
           />
         </div>
