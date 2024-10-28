@@ -7,18 +7,15 @@ import vercel from "@astrojs/vercel/serverless";
 import partytown from "@astrojs/partytown";
 import { site_url } from "./src/const";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    icon(),
-    sitemap({
-      filter: (page) =>
-        page !== { site_url } + "/cookie_policy/" &&
-        page !== { site_url } + "/privacy_policy/",
-    }),
-    partytown(),
-  ],
+  integrations: [tailwind(), icon(), sitemap({
+    filter: (page) =>
+      page !== { site_url } + "/cookie_policy/" &&
+      page !== { site_url } + "/privacy_policy/",
+  }), partytown(), react()],
   site: site_url,
   output: "hybrid",
   adapter: vercel(),

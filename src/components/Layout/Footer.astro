@@ -4,6 +4,7 @@ import maiella from "@img/loghi/Logo-maiella-escursioni.webp";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import CookieConsent from "@components/Shared/cookie/CookieConsent.astro";
+import ReactCookieConsent from "@components/Shared/cookie/ReactCookieConsent";
 ---
 
 <footer class="bg-stone-900 py-16">
@@ -99,7 +100,7 @@ import CookieConsent from "@components/Shared/cookie/CookieConsent.astro";
       >
     </div>
     <div class="mt-3">
-      <CookieConsent />
+      <ReactCookieConsent client:idle/>
     </div>
   </div>
 </footer>
