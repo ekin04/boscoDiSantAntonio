@@ -1,61 +1,73 @@
 ---
-export const prerender = false;
 import ContactButton from "@components/Shared/ContactButton.astro";
-import Swiper from "@components/Shared/Swiper.astro";
 import { Image } from "astro:assets";
+import autunnoJson from "@content/homeHero/autunno.json";
+import primaveraJson from "@content/homeHero/primavera.json";
+import invernoJson from "@content/homeHero/inverno.json";
+import type { ImageMetadata } from "astro";
 
-const autunno = await Astro.glob("../../assets/img/hero/autunno/*");
-const primavera = await Astro.glob("../../assets/img/hero/primavera/*");
-const inverno = await Astro.glob("../../assets/img/hero/inverno/*");
-
+// Function to get the current season based on the current month
 const getSeason = () => {
   const now = new Date();
-  const month = now.getMonth(); // Ottieni il mese (0 = Gennaio, 11 = Dicembre)
+  const month = now.getMonth(); // Get the current month (0 = January, 11 = December)
 
   if (month >= 2 && month <= 4) {
-    return "spring"; // Primavera (Marzo, Aprile, Maggio)
+    return "spring"; // Spring (March, April, May)
   } else if (month >= 5 && month <= 7) {
-    return "summer"; // Estate (Giugno, Luglio, Agosto)
+    return "summer"; // Summer (June, July, August)
   } else if (month >= 8 && month <= 10) {
-    return "autumn"; // Autunno (Settembre, Ottobre, Novembre)
+    return "autumn"; // Autumn (September, October, November)
   } else {
-    return "winter"; // Inverno (Dicembre, Gennaio, Febbraio)
+    return "winter"; // Winter (December, January, February)
   }
 };
 
-// Ottieni la stagione corrente
+// Determine the current season
 const currentSeason = getSeason();
 
-// Mappa le immagini per ogni stagione
+// Map images for each season using imported JSON data
 const seasonImages = {
-  spring: primavera,
-  summer: primavera,
-  autumn: autunno,
-  winter: inverno,
+  spring: primaveraJson,
+  summer: primaveraJson,
+  autumn: autunnoJson,
+  winter: invernoJson,
 };
 
-// Ottieni l'immagine corrispondente alla stagione corrente
+// Load images dynamically using import.meta.glob
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/img/cms/heroSlide/*.{jpeg,jpg,png,gif,webp}"
+);
+
+// Get the images corresponding to the current season
 const seasonImage = seasonImages[currentSeason];
 ---
 
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper bg-neutral-900 p-0 m-0 relative">
-    <!-- Slides -->
+<div class="w-full h-dvh">
+  <!-- Swiper container for image slides -->
+  <swiper-container
+    effect="fade" 
+    speed="2000" 
+    autoplay-delay="9000" 
+    loop="true"
+    fade-effect-cross-fade="true" 
+    allow-touch-move="false" 
+    class="swiper-wrapper w-full bg-neutral-900 p-0 m-0 relative overflow-x-hidden"
+  >
+    <!-- Iterate over season images and create slides -->
     {
-      seasonImage.map((image) => (
-        <div class="swiper-slide min-h-dvh relative flex justify-center items-center">
+      seasonImage.Immagini.map((img) => (
+        <swiper-slide class="min-h-dvh relative flex justify-center items-center w-full">
           <Image
-            src={image.default}
-            alt="slide"
-            class="absolute object-center w-full h-full object-cover zoom"
-            width={1920}
-            height={900}
-            loading="lazy"
+            src={images[img.src]()}
+            alt={img.alt} 
+            class="absolute top-0 left-0 object-center w-full h-full object-cover zoom"
+            widths={[9000, 1500]} 
+            sizes={"100vw"} 
           />
-        </div>
+        </swiper-slide>
       ))
     }
+    <!-- Overlay content on top of the slides -->
     <div
       class="title absolute inset-0 z-10 w-full h-full flex justify-center items-center bg-black/40 flex-col text-center p-4"
     >
@@ -86,26 +98,26 @@ const seasonImage = seasonImages[currentSeason];
         />
       </div>
     </div>
-  </div>
+  </swiper-container>
 </div>
 
-<Swiper />
-<script is:inline>
-  new Swiper(".swiper", {
-    allowTouchMove: false,
-    speed: 2000,
-    effect: "fade",
-    crossFade: true,
-
-    duration: 800,
-    autoplay: { delay: 9000 },
-  });
+<script>
+  // Import necessary modules from Swiper
+  import { register } from "swiper/element/bundle";
+  import "swiper/css";
+  import "swiper/element/css/autoplay";
+  import "swiper/element/css/effect-fade";
+  // Register Swiper custom elements
+  register();
 </script>
+
 <style>
+  /* Define zoom animation for images */
   .zoom {
-    animation: zoom 8s infinite alternate; /* Cambia il tempo e la modalità di animazione secondo necessità */
+    animation: zoom 8s infinite alternate; /* Set animation duration and mode */
   }
 
+  /* Keyframes for zoom animation */
   @keyframes zoom {
     0% {
       transform: scale(1);

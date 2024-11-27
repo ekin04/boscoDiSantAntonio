@@ -5,9 +5,13 @@ module.exports = {
 		'./node_modules/flowbite/**/*.js'
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				primary: '#10B981',
+			  },
+		},
 	},
 	plugins: [
-		require('flowbite/plugin')
+		require('flowbite/plugin'), require('@tailwindcss/typography'),
 	],
 }

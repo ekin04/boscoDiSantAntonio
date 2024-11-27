@@ -1,0 +1,174 @@
+#icons are visible on https://fonts.google.com/icons?icon.set=Material+Symbols&icon.platform=android
+local_backend: true
+
+logo_url: /favicon/favicon.svg
+
+backend:
+    name: github
+    repo: ekin04/bosco-di-sant-antonio
+    branch: main
+    site_domain: boscodisantantonio.it
+    base_url: https://sveltia-cms-auth.mirko-chiaverini.workers.dev
+    automatic_deployments: true
+
+media_folder: "src/assets/img/cms"
+public_folder: "src/assets/img/cms"
+
+collections:
+  - name: "blog" 
+    label: "Blog"
+    icon: menu_book
+    folder: "src/content/blog" 
+    media_folder: /src/assets/img/cms/blog
+    public_folder: /src/assets/img/cms/blog
+    summary: "{{title}} || {{categoria}}"
+    preview_path: "blog/{{slug}}"
+    create: true
+    fields: 
+      - { label: "Titolo", name: "title", widget: "string", maxlength: 60 }
+      - { label: "Breve descrizione", name: "excerpt", widget: "string", maxlength: 160 }
+      - { label: "Publish Date", name: "date", widget: "datetime", default: "now", date_format: "DD/MM/YYYY", time_format: "HH:mm" }
+      - { label: "Immagine in evidenza", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown", modes: ["rich_text","raw"] }
+      - label: Categoria
+        name: categoria 
+        widget: relation 
+        collection: categorie 
+        value_field: title
+        multiple: true
+      - name: galleria
+        label: Galleria di Immagini
+        widget: list
+        required: false
+        fields:
+          - name: src
+            label: Source
+            widget: image
+          - name: alt
+            label: Alt Text
+            widget: string
+
+  - name: categorie
+    label: Categorie Blog
+    icon: category
+    folder: src/content/categorie
+    create: true
+    fields:
+      - { label: "Titolo", name: "title", widget: "string", hint: "ATTENZIONE! se volete rimuovere una categoria assicuratevi prima di rimuoverla da tutti gli articoli"}
+      - { label: "Descrizione", name: "description", widget: "text", required: false }
+      - { label: "Icona", name: "icon", widget: "string", required: false, hint: "Puoi trovare le icone qui https://icon-sets.iconify.design/mdi/", default: "mdi:mountain-outline" }
+  
+  - divider: true
+    name: d1 
+    files: []
+
+  - name: carosello
+    label: Carosello Escursioni
+    folder: src/content/carosello
+    icon: view_carousel
+    media_folder: /src/assets/img/cms/carosello
+    public_folder: /src/assets/img/cms/carosello
+    create: true
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Immagine", name: "image", widget: "image" }
+  
+  - name: homeHero
+    label: Home Hero
+    icon: nature
+    media_folder: /src/assets/img/cms/heroSlide
+    public_folder: /src/assets/img/cms/heroSlide
+    files:
+      - label: Primavera
+        name: primavera
+        file: src/content/homeHero/primavera.json
+        fields:
+          - name: Immagini
+            label: Immagini
+            hint: "Puoi inserire più immagini per lo slide iniziale per la stagione primavera"
+            widget: list
+            fields:
+              - name: src
+                label: Source
+                widget: image
+              - name: alt
+                label: Alt Text
+                widget: string
+      - label: Autunno
+        name: autunno
+        file: src/content/homeHero/autunno.json
+        fields:
+          - name: Immagini
+            label: Immagini
+            hint: "Puoi inserire più immagini per lo slide iniziale per la stagione autunno"
+            widget: list
+            fields:
+              - name: src
+                label: Source
+                widget: image
+              - name: alt
+                label: Alt Text
+                widget: string
+      - label: Inverno
+        name: inverno
+        file: src/content/homeHero/inverno.json
+        fields:
+          - name: Immagini
+            label: Immagini
+            hint: "Puoi inserire più immagini per lo slide iniziale per la stagione inverno"
+            widget: list
+            fields:
+              - name: src
+                label: Source
+                widget: image
+              - name: alt
+                label: Alt Text
+                widget: string
+    
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Descrizione", name: "description", widget: "string" }
+      - { label: "Immagine", name: "image", widget: "image" }
+
+  
+  - name: navbar
+    label: Navbar
+    icon: menu
+    files:
+      - label: Navbar Header
+        name: "navbarHeader"
+        file: src/content/navbar/navbarHeader.json
+        fields:
+        - label: "Voci della Navbar"
+          name: "items"
+          widget: "list" # Lista di voci della navbar
+          fields:
+            - label: "Etichetta"
+              name: "label"
+              widget: "string"
+            - label: "Percorso"
+              name: "path"
+              widget: "string"
+            - label: "Icona"
+              name: "icon"
+              hint: "Puoi trovare le icone qui https://icon-sets.iconify.design/mdi/ es. mdi:mountain-outline"
+              widget: "string"
+              required: false
+            - label: "Link esterno"
+              name: "externalLink"
+              widget: "boolean"
+              required: false
+              default: false
+            - label: "Sottomenu"
+              name: "children"
+              widget: "list" # Sottomenu
+              required: false
+              fields:
+                - label: "Etichetta"
+                  name: "label"
+                  widget: "string"
+                - label: "Percorso"
+                  name: "path"
+                  widget: "string"
+     

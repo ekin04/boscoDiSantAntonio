@@ -84,7 +84,7 @@ const ReactCookieConsent = () => {
                         {
                           title: 'Analytics Cookies',
                           description:
-                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                            'Sono i cookie che ci consentono di raccogliere informazioni sulle attività di navigazione e di migliorare le prestazioni del nostro sito.',
                           linkedCategory: 'analytics',
                         },
                         {

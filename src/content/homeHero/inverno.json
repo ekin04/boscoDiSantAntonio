@@ -1,0 +1,12 @@
+{
+  "Immagini": [
+    {
+      "src": "/src/assets/img/cms/heroSlide/Inverno1.jpg",
+      "alt": "bosco innevato"
+    },
+    {
+      "src": "/src/assets/img/cms/heroSlide/inverno2.jpg",
+      "alt": "ciaspolata"
+    }
+  ]
+}

@@ -3,10 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import john from "@img/loghi/confused-john-travolta.gif";
 ---
 
-<Layout>
-  <section class="py-16 px-4 md:px-8 overflow-x-hidden">
+<Layout titolo="404" descrizione="Pagina non trovata">
+  <section class="py-16 px-4 md:px-8 overflow-x-hidden bg-white">
     <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8">
-        <img src={john.src} alt="404" class="pl-10 md:pl-0"/>
+        <img src={john.src} alt="404" class="ll-5 md:pl-0"/>
         <div class="flex flex-col justify-center items-center text-center">
             <h1 class="text-3xl font-bold mb-4">404</h1>
             <h2 class="text-2xl font-bold mb-4">Pagina non trovata</h2>

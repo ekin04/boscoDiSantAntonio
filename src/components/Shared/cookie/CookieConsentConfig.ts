@@ -46,7 +46,7 @@ export const config: CookieConsentConfig = {
         consentModal: {
           title: "Lo vuoi un biscotto? - Cookie Consent",
           description:
-            "Navigando sul nostro sito, accetti l'uso dei cookie per offrirti contenuti personalizzati e analizzare il traffico per soli fini statistici, vi promettiamo che non vi manderemo immagini di gattini",
+            "Navigando sul nostro sito, accetti l'uso dei cookie per offrirti contenuti personalizzati e analizzare il traffico per soli fine statistico, vi promettiamo che non vi manderemo immagini di gattini",
           acceptAllBtn: 'Accetta tutti',
           acceptNecessaryBtn: 'Rifiuta',
           showPreferencesBtn: 'Gestisci preferenze',

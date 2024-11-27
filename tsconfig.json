@@ -10,6 +10,7 @@
       "@components/*": ["components/*"],
       "@content/*": ["content/*"],
       "@assets/*": ["assets/*"],
+      "@cmsImg/*": ["assets/img/cms/*"]
     }
   }
 }

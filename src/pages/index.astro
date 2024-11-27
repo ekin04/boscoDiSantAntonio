@@ -1,24 +1,26 @@
 ---
-import Hero from "@components/home/Hero.astro";
-import Hero2 from "@components/home/Hero/Hero";
 import Layout from "../layouts/Layout.astro";
-import Contact from "@components/Shared/Contact.astro";
 import Section_one from "@components/home/Section_one.astro";
 import Section_two from "@components/home/Section_two.astro";
 import Section_three from "@components/home/Section_three.astro";
 import Section_four from "@components/home/Section_four.astro";
 import CallToAction from "@components/home/Call_to_action.astro";
-import Carousel from "@components/home/CarouselAttivita/Carousel";
+import Carousel from "@components/home/Carousel.astro";
+import UltimiArticoli from "@components/home/UltimiArticoli.astro";
+import Hero from "@components/home/Hero.astro";
 ---
-<Layout>
-	<Hero2 client:load />
-	<Section_one />
-	<Section_two />
-	<Section_three />
-	<Section_four />
-	<CallToAction />
-	<Carousel client:visible/>
-	
-	<Contact />
-	
+
+<Layout
+  titolo="Trekking in Abruzzo"
+  descrizione="Scopri il Bosco di Sant'Antonio, una delle aree naturalistiche più importanti d'Italia Esplora gli alberi monumentali, i funghi, e la fauna selvatica in Abruzzo"
+  navbar={true}
+>
+  <Hero />
+  <Section_one />
+  <Section_two />
+  <Section_three />
+  <Section_four />
+  <UltimiArticoli />
+  <CallToAction />
+  <Carousel />
 </Layout>

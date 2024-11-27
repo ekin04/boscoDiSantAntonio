@@ -1,0 +1,16 @@
+{
+  "Immagini": [
+    {
+      "src": "/src/assets/img/cms/heroSlide/Autunno1.jpg",
+      "alt": "Autunno bosco con foglie a rosse"
+    },
+    {
+      "src": "/src/assets/img/cms/heroSlide/Autunno2.jpg",
+      "alt": "Bosco autunnale con raggi di sole"
+    },
+    {
+      "src": "/src/assets/img/cms/heroSlide/Autunno3.jpg",
+      "alt": "Bosco autunnale"
+    }
+  ]
+}

@@ -1,15 +1,35 @@
 ---
-import Header from "../components/Layout/Header.astro";
 import Footer from "../components/Layout/Footer.astro";
 import "aos/dist/aos.css";
+import Seo from "@components/Layout/Seo.astro";
+import Analytics from "@components/Layout/Analytics.astro";
+import { ViewTransitions } from "astro:transitions";
+import Contact from "@components/Shared/Contact.astro";
+import Navbar from "@components/Layout/Navbar.astro";
+interface Props {
+  titolo: string;
+  descrizione: string;
+  immagine?: string;
+  index?: boolean;
+  data?: Date;
+  navbar?: boolean;
+}
+const { titolo, descrizione, immagine, index, data, navbar } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="it">
-  <Header />
+<html lang="it" class="scroll-smooth">
+  <head>
+    <Seo titolo={titolo} descrizione={descrizione} immagine={immagine} index={index} data={data} />
+    <Analytics />
+    <ViewTransitions />
+    <slot name="head" />
+  </head>
   <body class="overflow-x-hidden flex flex-col min-h-screen">
+    <Navbar hidden={navbar}/>
     <main class="flex-grow">
       <slot />
+      <Contact/>
     </main>
     <Footer />
   </body>
