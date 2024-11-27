@@ -17,7 +17,7 @@ import ImageAstro from "@components/Shared/ImageAstro.astro";
         {postFiltrati.map((i, index) => (
           <a href={`/blog/${i.slug}`} class="block group hover:text-green-500 transition">
             <div class="flex items-center overflow-x-hidden">
-              <div class="flex-shrink-0 h-32 w-32 rounded-md overflow-hidden relative"
+              <div class="flex-shrink-0 h-28 w-28 rounded-md overflow-hidden relative"
               data-aos="fade-right"
               data-aos-delay={(index + 1) * 100}>
                  <ImageAstro
@@ -30,11 +30,11 @@ import ImageAstro from "@components/Shared/ImageAstro.astro";
               <div class="ml-4 flex justify-center flex-col"
               data-aos="fade-left"
               data-aos-delay={(index + 1) * 100}>
-                <h3 class="text-lg line-clamp-2 font-medium text-gray-900 group-hover:text-green-500 transition-colors">
+                <h3 class="text-lg line-clamp-2 font-medium text-gray-900 group-hover:text-green-500 transition-colors leading-tight">
                   {i.data.title}
                 </h3>
                 <p class="text-sm line-clamp-2 text-gray-500 my-1">{i.data.excerpt}</p>
-                <span class="mt-1 text-xs text-gray-500">{i.data.date.toLocaleDateString()}</span>
+                <span class="text-xs text-gray-500">{i.data.date.toLocaleDateString("it")}</span>
               </div>
             </div>
           </a>
