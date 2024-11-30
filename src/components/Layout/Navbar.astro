@@ -58,7 +58,8 @@ const { hidden=false } = Astro.props;
                 aria-current={Astro.url.pathname === item.path ? "page" : false}
                 target={item.externalLink? "_blank" : "_self"}
               >
-                <Icon name={item.icon} class="mr-2 h-6 w-6" />
+                {item.icon && <Icon name={item.icon} class="mr-2 h-6 w-6" /> }
+                
                 {item.label}
               </a>
             </li>

@@ -1,5 +1,5 @@
 import { config, fields, collection, singleton } from "@keystatic/core";
-import { siteName, keyStaticProject } from "./const";
+import { defaultTitle, keyStaticProject } from "./config";
 import React from "react";
 
 export default config({
@@ -7,7 +7,7 @@ export default config({
   cloud: { project: keyStaticProject },
   ui: {
     brand: {
-      name: siteName,
+      name: defaultTitle,
       mark: () => {
         return React.createElement("img", {
           src: "/favicon/favicon.svg",
@@ -16,14 +16,16 @@ export default config({
       },
     },
     navigation: {
-      Pagine: ["escursioni"],
-      Impostazioni: ["caroselloHome", "categorieBlog"],
+      Blog: ["escursioni", "categorieBlog"],
+      Home:["primavera","autunno", "inverno","caroselloHome"],
+      Impostazioni: ["navbarHeader"],
+      
     },
   },
 
   collections: {
     escursioni: collection({
-      label: "📑 Blog",
+      label: "📰 Blog",
       slugField: "title",
       path: "src/content/blog/*",
       columns: ["title", "thumbnail", "date"],
@@ -135,8 +137,8 @@ export default config({
   },
   singletons: {
     caroselloHome: singleton({
-      label: "🎠 Carosello Home",
-      path: "src/content/carosello-home",
+      label: "🎠 Carosello Attività Home",
+      path: "src/content/carousel/caroselloattivita",
       format: { data: "json" },
       schema: {
         slide: fields.array(
@@ -151,17 +153,131 @@ export default config({
             }),
             image: fields.image({
               label: "Immagine",
-              directory: "src/assets/img/cms",
-              publicPath: "/src/assets/img/cms",
+              directory: "src/assets/img/cms/carosello",
+              publicPath: "/src/assets/img/cms/carosello",
               validation: { isRequired: true },
             }),
           }),
           {
-            label: "Slide galleria",
+            label: "Slide carosello attività",
             itemLabel: (props) => props.fields.title.value,
           }
         ),
       },
+    }),
+    navbarHeader: singleton({
+      label: "🛠️ Navbar",
+      path: "src/content/navbar/navbarHeader",
+      format: { data: "json" },
+      schema: {
+        items: fields.array(
+          fields.object({
+            label: fields.text({
+              label: "Etichetta",
+              validation: { isRequired: true },
+            }),
+            path: fields.text({
+              label: "Percorso",
+              validation: { isRequired: true },
+            }),
+            icon: fields.text({
+              label: "Icona",
+              description:
+                "Puoi trovare le icone qui https://icon-sets.iconify.design/mdi/ es. mdi:mountain-outline",
+            }),
+            externalLink: fields.checkbox({
+              label: "Link esterno",
+            }),
+            children: fields.array(
+              fields.object({
+                label: fields.text({
+                  label: "Etichetta",
+                  validation: { isRequired: true },
+                }),
+                path: fields.text({
+                  label: "Percorso",
+                  validation: { isRequired: true },
+                }),
+              }),
+              {
+                label: "Sottomenu",
+                itemLabel: (props) => props.fields.label.value,
+              }
+            ),
+          }),
+          {
+            label: "Voci della Navbar Header",
+            itemLabel: (props) => props.fields.label.value,
+          }
+        ),
+      },
+    }),          
+    autunno: singleton({
+      label: "🍂 Autunno",
+      path: "src/content/homeHero/autunno",
+      format: { data: "json" },
+      schema: {
+        Immagini: fields.array(
+          fields.object({
+            src: fields.image({
+              label: "Immagini",
+              directory: "src/assets/img/cms/heroSlide",
+              publicPath: "/src/assets/img/cms/heroSlide",
+              validation: { isRequired: true },
+            }),
+            alt: fields.text({ label: "Alt Text", validation: { isRequired: true } }),
+            
+          }),
+          {
+            label: "Immagini per la stagione autunnale",
+            itemLabel: (props) => props.fields.alt.value,
+          }
+        ),
+      }
+    }),
+    inverno: singleton({
+      label: "❄️ Inverno",
+      path: "src/content/homeHero/inverno",
+      format: { data: "json" },
+      schema: {
+        Immagini: fields.array(
+          fields.object({
+            src: fields.image({
+              label: "Immagini",
+              directory: "src/assets/img/cms/heroSlide",
+              publicPath: "/src/assets/img/cms/heroSlide",
+              validation: { isRequired: true },
+            }),
+            alt: fields.text({ label: "Alt Text", validation: { isRequired: true } }),
+          }),
+          {
+            label: "Immagini per la stagione invernale",
+            itemLabel: (props) => props.fields.alt.value,
+          }
+        ),
+      }
+    }),
+    primavera: singleton({
+      label: "🌻 Primavera",
+      path: "src/content/homeHero/primavera",
+      format: { data: "json" },
+      schema: {
+        Immagini: fields.array(
+          fields.object({
+            src: fields.image({
+              label: "Immagini",
+              directory: "src/assets/img/cms/heroSlide",
+              publicPath: "/src/assets/img/cms/heroSlide",
+              validation: { isRequired: true },
+            }),
+            alt: fields.text({ label: "Alt Text", validation: { isRequired: true } }),
+          }),
+          {
+            label: "Immagini per la stagione primaverile",
+            itemLabel: (props) => props.fields.alt.value,
+          }
+        ),
+      }
     }),
   },
 });

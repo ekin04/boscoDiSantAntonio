@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 const carosello = await getCollection("carosello");
+import caroselloJson from "@content/carousel/caroselloattivita.json"
 import CarouselWrapper from "./Carousel/CarouselActivity";
 ---
 <section class="py-10 bg-white px-3">
@@ -8,6 +9,6 @@ import CarouselWrapper from "./Carousel/CarouselActivity";
     Scopri le nostre escursioni
   </h2>
   <div class=" max-w-screen-2xl p-5">
-    <CarouselWrapper cards={carosello} client:idle />
+    <CarouselWrapper cards={caroselloJson} client:idle />
   </div>
 </section>

@@ -35,19 +35,19 @@ const CarouselWrapper = ({ cards }: { cards: any}) => {
       autoplay={{ delay: 5000 }}
       className="max-w-screen-2xl"
     >
-      {cards.map((card: any) => (
-        <SwiperSlide key={card.id}>
+      {cards.slide.map((card: any) => (
+        <SwiperSlide key={card.title}>
 
           <a
-            href={card.data.link}
+            href={card.link}
             className="group relative block h-96 rounded-2xl w-full overflow-hidden shadow-xl"
-            aria-label={card.data.title + " external url"}
+            aria-label={card.title + " external url"}
             target="_blank"
           >
             <Image
-                title={card.data.title}
-                src={card.data.image.src}
-                alt={card.data.title}
+                title={card.title}
+                src={card.image}
+                alt={card.title}
                 width={600}
                 height={600}
                 loading="lazy"
@@ -56,7 +56,7 @@ const CarouselWrapper = ({ cards }: { cards: any}) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <div className="absolute bottom-12 right-4 p-4 w-5/6">
               <h2 className="mb-2 text-2xl text-pretty text-right font-bold text-white transition-transform duration-500 group-hover:translate-x-2">
-                {card.data.title}
+                {card.title}
               </h2>
             </div>
           </a>
