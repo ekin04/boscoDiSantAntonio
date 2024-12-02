@@ -5,6 +5,10 @@ import { Image } from "@unpic/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/img/cms/carosello/slide/**/*.{jpeg,jpg,png,gif,webp}", {eager:true}
+);
+console.log(images);
 
 const CarouselWrapper = ({ cards }: { cards: any}) => {
   return (
@@ -46,7 +50,7 @@ const CarouselWrapper = ({ cards }: { cards: any}) => {
           >
             <Image
                 title={card.title}
-                src={card.image}
+                src={images[card.image].default.src}
                 alt={card.title}
                 width={600}
                 height={600}
