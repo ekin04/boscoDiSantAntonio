@@ -1,34 +1,39 @@
 {
   "slide": [
     {
+      "title": "Area Faunistica del Cervo Gamberale",
+      "link": "https://www.maiellaescursioni.it/tour-item/area-faunistica-del-cervo-gamberale/",
+      "image": "/src/assets/img/cms/carosello/slide/0/image.webp"
+    },
+    {
       "title": "Calendario Novembre 2024",
       "link": "https://www.maiellaescursioni.it/tour-item/calendario-novembre-2024/",
-      "image": "/src/assets/img/cms/carosello/slide/0/image.webp"
+      "image": "/src/assets/img/cms/carosello/slide/1/image.webp"
     },
     {
       "title": "Camoscio Appenninico Visita in area faunistica",
       "link": "https://www.maiellaescursioni.it/tour-item/sulle-tracce-del-camoscio-appenninico",
-      "image": "/src/assets/img/cms/carosello/slide/1/image.webp"
+      "image": "/src/assets/img/cms/carosello/slide/2/image.webp"
     },
     {
       "title": "Cima di Tavola Rotonda e Canyon della Sfischia",
       "link": "https://www.maiellaescursioni.it/tour-item/il-canyon-della-sfischia-e-cima-di-tavola-rotonda-escursioni-sulla-maiella/",
-      "image": "/src/assets/img/cms/carosello/slide/2/image.webp"
+      "image": "/src/assets/img/cms/carosello/slide/3/image.webp"
     },
     {
       "title": "Monte Amaro - La vetta più ambita della Maiella",
       "link": "https://www.maiellaescursioni.it/tour-item/monte-amaro/",
-      "image": "/src/assets/img/cms/carosello/slide/3/image.jpg"
+      "image": "/src/assets/img/cms/carosello/slide/4/image.jpg"
     },
     {
       "title": "Orso Bruno - Trekking e Avvistamento",
       "link": "https://www.maiellaescursioni.it/tour-item/scoprendo-l-orso-bruno-marsicano/",
-      "image": "/src/assets/img/cms/carosello/slide/4/image.webp"
+      "image": "/src/assets/img/cms/carosello/slide/5/image.webp"
     },
     {
       "title": "Pernottamento in Rifugio e trekking",
       "link": "https://www.maiellaescursioni.it/tour-item/pernottamento-in-rifugio-e-trekking",
-      "image": "/src/assets/img/cms/carosello/slide/5/image.webp"
+      "image": "/src/assets/img/cms/carosello/slide/6/image.webp"
     }
   ]
 }
