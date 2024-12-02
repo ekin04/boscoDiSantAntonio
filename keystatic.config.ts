@@ -4,7 +4,7 @@ import React from "react";
 
 export default config({
   storage: import.meta.env.DEV === true ? { kind: "local" } : { kind: "cloud" },
-  cloud: { project: `${keyStaticProject}`},
+  cloud: { project: keyStaticProject},
   ui: {
     brand: {
       name: defaultTitle,
