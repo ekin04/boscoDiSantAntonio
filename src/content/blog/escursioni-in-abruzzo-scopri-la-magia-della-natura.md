@@ -2,9 +2,9 @@
 title: "Escursioni in Abruzzo: Scopri la Magia della Natura"
 excerpt: Scopri le escursioni più belle in Abruzzo con Maiella Escursioni, natura, storia e itinerari personalizzati nel cuore del Parco Nazionale della Maiella.
 date: 2024-10-23T03:44:00
-thumbnail: /src/assets/img/cms/heroSlide/primavera2.jpg
+thumbnail: /src/assets/img/cms/heroSlide/primavera/Immagini/1/src.jpg
 categoria:
-  - Escrursioni
+  - escrursioni
 galleria: []
 ---
 ### Conosciamoci

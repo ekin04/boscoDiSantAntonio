@@ -16,59 +16,77 @@ export default config({
       },
     },
     navigation: {
-      Blog: ["escursioni", "categorieBlog"],
-      Home:["primavera","autunno", "inverno","caroselloHome"],
+      Blog: ["blog", "categorie"],
+      Home: ["primavera", "autunno", "inverno", "caroselloHome"],
       Impostazioni: ["navbarHeader"],
-      
     },
   },
 
   collections: {
-    escursioni: collection({
+    blog: collection({
       label: "📰 Blog",
       slugField: "title",
       path: "src/content/blog/*",
-      columns: ["title", "thumbnail", "date"],
+      columns: ["title", "date"],
       format: { contentField: "body" },
       entryLayout: "content",
       schema: {
-        title: fields.slug({ name: { label: "Titolo" } }),
+        title: fields.slug({
+          name: {
+            label: "Titolo",
+            validation: {
+              isRequired: true,
+              length: { max: 60 },
+            },
+          },
+        }),
         excerpt: fields.text({
           label: "Breve descrizione",
           description: "Inserisci una breve descrizione per il tuo articolo",
           multiline: true,
           validation: { length: { max: 160 }, isRequired: true },
         }),
-        date: fields.date({
+        date: fields.datetime({
           label: "Data di pubblicazione",
           validation: { isRequired: true },
+          defaultValue: { kind: "now" },
         }),
         thumbnail: fields.image({
           label: "Immagine in evidenza",
           directory: "src/assets/img/cms/blog",
-          publicPath: "@cmsImg/blog",
+          publicPath: "/src/assets/img/cms/blog",
           validation: { isRequired: true },
         }),
 
-        body: fields.mdx({
+        body: fields.markdoc({
           label: "Scrivi il tuo articolo",
+          extension: "md",
           options: {
             image: {
-              directory: "src/assets/img/cms/blog",
-              publicPath: "@cmsImg/blog",
+              directory: "public/img/blogEntry",
+              publicPath: "/img/blogEntry",
             },
           },
         }),
-        categoria: fields.relationship({
-          label: "Categoria",
-          collection: "categorieBlog",
-        }),
+        categoria: fields.array(
+          fields.relationship({
+            label: "Categorie",
+            validation: { isRequired: true },
+            description: "Lista delle categorie di questo articolo",
+            collection: "categorie",
+          }),
+          {
+            label: "Categorie",
+            itemLabel: (item) => item.value || "Seleziona una categoria",
+          }
+        ),
+
         galleria: fields.array(
           fields.object({
             src: fields.image({
               label: "Source",
               directory: "src/assets/img/cms/blog",
-              publicPath: "@cmsImg/blog",
+              publicPath: "/src/assets/img/cms/blog",
             }),
             alt: fields.text({ label: "Alt Text" }),
           }),
@@ -79,59 +97,39 @@ export default config({
         ),
       },
     }),
-    categorieBlog: collection({
+
+    categorie: collection({
       label: "📑 Categorie Blog",
       slugField: "title",
-      path: "src/content/blog/*",
-      columns: ["title", "thumbnail", "date"],
-      format: { contentField: "body" },
-      entryLayout: "content",
+      path: "src/content/categorie/*",
+      columns: ["title", "icon"],
+      format: { contentField: "emptyContent" },
       schema: {
-        title: fields.slug({ name: { label: "Titolo" } }),
-        excerpt: fields.text({
-          label: "Breve descrizione",
-          description: "Inserisci una breve descrizione per il tuo articolo",
-          multiline: true,
-          validation: { length: { max: 160 }, isRequired: true },
-        }),
-        date: fields.date({
-          label: "Data di pubblicazione",
-          validation: { isRequired: true },
-        }),
-        thumbnail: fields.image({
-          label: "Immagine in evidenza",
-          directory: "src/assets/img/cms/blog",
-          publicPath: "@cmsImg/blog",
-          validation: { isRequired: true },
-        }),
-
-        body: fields.mdx({
-          label: "Scrivi il tuo articolo",
-          options: {
-            image: {
-              directory: "src/assets/img/cms/blog",
-              publicPath: "@cmsImg/blog",
+        emptyContent: fields.emptyContent({ extension: "md" }),
+        title: fields.slug({
+          name: {
+            label: "Titolo",
+            description:
+              "ATTENZIONE! se volete rimuovere una categoria assicuratevi prima di rimuoverla da tutti gli articoli",
+            validation: {
+              isRequired: true,
             },
           },
         }),
-        categoria: fields.relationship({
-          label: "Categoria",
-          collection: "categorieBlog",
+        description: fields.text({
+          label: "Breve descrizione",
+          description: "Inserisci una breve descrizione per la categoria",
+          multiline: true,
+          validation:{isRequired: true},
         }),
-        galleria: fields.array(
-          fields.object({
-            src: fields.image({
-              label: "Source",
-              directory: "src/assets/img/cms/blog",
-              publicPath: "@cmsImg/blog",
-            }),
-            alt: fields.text({ label: "Alt Text" }),
-          }),
-          {
-            label: "Galleria di Immagini",
-            itemLabel: (props) => props.fields.alt.value,
-          }
-        ),
+
+        icon: fields.text({
+          label: "Icona categoria",
+          validation: { isRequired: true },
+          description:
+            "Puoi trovare le icone qui https://icon-sets.iconify.design/mdi/ ",
+          defaultValue: "mdi:mountain-outline",
+        }),
       },
     }),
   },
@@ -211,7 +209,7 @@ export default config({
           }
         ),
       },
-    }),          
+    }),
     autunno: singleton({
       label: "🍂 Autunno",
       path: "src/content/homeHero/autunno",
@@ -221,19 +219,21 @@ export default config({
           fields.object({
             src: fields.image({
               label: "Immagini",
-              directory: "src/assets/img/cms/heroSlide",
-              publicPath: "/src/assets/img/cms/heroSlide",
+              directory: "src/assets/img/cms/heroSlide/autunno",
+              publicPath: "/src/assets/img/cms/heroSlide/autunno",
               validation: { isRequired: true },
             }),
-            alt: fields.text({ label: "Alt Text", validation: { isRequired: true } }),
-            
+            alt: fields.text({
+              label: "Alt Text",
+              validation: { isRequired: true },
+            }),
           }),
           {
             label: "Immagini per la stagione autunnale",
             itemLabel: (props) => props.fields.alt.value,
           }
         ),
-      }
+      },
     }),
     inverno: singleton({
       label: "❄️ Inverno",
@@ -244,18 +244,21 @@ export default config({
           fields.object({
             src: fields.image({
               label: "Immagini",
-              directory: "src/assets/img/cms/heroSlide",
-              publicPath: "/src/assets/img/cms/heroSlide",
+              directory: "src/assets/img/cms/heroSlide/inverno",
+              publicPath: "/src/assets/img/cms/heroSlide/inverno",
               validation: { isRequired: true },
             }),
-            alt: fields.text({ label: "Alt Text", validation: { isRequired: true } }),
+            alt: fields.text({
+              label: "Alt Text",
+              validation: { isRequired: true },
+            }),
           }),
           {
             label: "Immagini per la stagione invernale",
             itemLabel: (props) => props.fields.alt.value,
           }
         ),
-      }
+      },
     }),
     primavera: singleton({
       label: "🌻 Primavera",
@@ -266,18 +269,21 @@ export default config({
           fields.object({
             src: fields.image({
               label: "Immagini",
-              directory: "src/assets/img/cms/heroSlide",
-              publicPath: "/src/assets/img/cms/heroSlide",
+              directory: "src/assets/img/cms/heroSlide/primavera",
+              publicPath: "/src/assets/img/cms/heroSlide/primavera",
               validation: { isRequired: true },
             }),
-            alt: fields.text({ label: "Alt Text", validation: { isRequired: true } }),
+            alt: fields.text({
+              label: "Alt Text",
+              validation: { isRequired: true },
+            }),
           }),
           {
             label: "Immagini per la stagione primaverile",
             itemLabel: (props) => props.fields.alt.value,
           }
         ),
-      }
+      },
     }),
   },
 });

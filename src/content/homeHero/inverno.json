@@ -1,12 +1,16 @@
 {
   "Immagini": [
     {
-      "src": "/src/assets/img/cms/heroSlide/Inverno1.jpg",
+      "src": "/src/assets/img/cms/heroSlide/inverno/Immagini/0/src.jpg",
       "alt": "bosco innevato"
     },
     {
-      "src": "/src/assets/img/cms/heroSlide/inverno2.jpg",
+      "src": "/src/assets/img/cms/heroSlide/inverno/Immagini/1/src.jpg",
       "alt": "ciaspolata"
+    },
+    {
+      "src": "/src/assets/img/cms/heroSlide/inverno/Immagini/2/src.jpg",
+      "alt": "bosco innevato fantasy"
     }
   ]
 }

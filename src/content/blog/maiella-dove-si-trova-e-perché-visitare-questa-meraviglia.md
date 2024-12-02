@@ -4,7 +4,7 @@ excerpt: Tutto quello che c’è da sapere sulla “Montagna Madre”
 date: 2024-10-25T20:04:00
 thumbnail: /src/assets/img/cms/blog/mappa-maiella-escursioni.png
 categoria:
-  - Luoghi
+  - luoghi
 galleria: []
 ---
 ## Dove si trova la Maiella?

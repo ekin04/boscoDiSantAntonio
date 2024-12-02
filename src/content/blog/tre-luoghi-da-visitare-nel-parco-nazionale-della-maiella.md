@@ -4,8 +4,8 @@ excerpt: Dalle Gole di San Martino alla fioritura delle orchidee di Palena, fino
 date: 2024-10-17T02:57:00
 thumbnail: /src/assets/img/cms/blog/Gole di Fara San Martino.webp
 categoria:
-  - Escrursioni
-  - Luoghi
+  - escrursioni
+  - luoghi
 galleria:
   - src: /src/assets/img/cms/blog/gole Fara San Martino.webp
     alt: Escursione nelle gole di Fara San Martino

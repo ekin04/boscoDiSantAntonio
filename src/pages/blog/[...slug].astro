@@ -20,7 +20,7 @@ import Prose from "@components/blog/Prose.astro";
 import ReadBar from "@components/blog/ReadBar";
 import type { ImageMetadata } from "astro";
 import PrevAndAfter from "@components/blog/PrevAndAfter.astro";
-const blogImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/cms/*/*.{jpeg,jpg,png,gif,webp}');
+const blogImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/cms/**/*.{jpeg,jpg,png,gif,webp}');
 const ogImage= await blogImages[entry.data.thumbnail]()
 
 ---

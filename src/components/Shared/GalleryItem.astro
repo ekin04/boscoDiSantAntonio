@@ -12,7 +12,7 @@ interface Props {
 const { imagePath, altText, widths, classList } = Astro.props;
 
 // Carica le immagini dinamicamente tramite glob
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/cms/*/*.{jpeg,jpg,png,gif,webp}');
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/cms/**/*.{jpeg,jpg,png,gif,webp}');
 
 // Verifica se l'immagine esiste nel glob
 if (!images[imagePath]) {

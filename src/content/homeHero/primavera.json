@@ -1,15 +1,15 @@
 {
   "Immagini": [
     {
-      "src": "/src/assets/img/cms/heroSlide/Immagini/0/src.jpg",
+      "src": "/src/assets/img/cms/heroSlide/primavera/Immagini/0/src.jpg",
       "alt": "Bosco primaverile"
     },
     {
-      "src": "/src/assets/img/cms/heroSlide/Immagini/1/src.jpg",
+      "src": "/src/assets/img/cms/heroSlide/primavera/Immagini/1/src.jpg",
       "alt": "Albero secolare"
     },
     {
-      "src": "/src/assets/img/cms/heroSlide/Immagini/2/src.jpg",
+      "src": "/src/assets/img/cms/heroSlide/primavera/Immagini/2/src.jpg",
       "alt": "Gruppo escursionisti "
     }
   ]

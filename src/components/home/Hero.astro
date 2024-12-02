@@ -35,9 +35,8 @@ const seasonImages = {
 
 // Load images dynamically using import.meta.glob
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/img/cms/heroSlide/*.{jpeg,jpg,png,gif,webp}"
+  "/src/assets/img/cms/heroSlide/**/*.{jpeg,jpg,png,gif,webp}", {eager:true}
 );
-
 // Get the images corresponding to the current season
 const seasonImage = seasonImages[currentSeason];
 ---
@@ -58,10 +57,10 @@ const seasonImage = seasonImages[currentSeason];
       seasonImage.Immagini.map((img) => (
         <swiper-slide class="min-h-dvh relative flex justify-center items-center w-full">
           <Image
-            src={images[img.src]()}
+            src={images[img.src].default}
             alt={img.alt} 
             class="absolute top-0 left-0 object-center w-full h-full object-cover zoom"
-            widths={[9000, 1500]} 
+            widths={[900, 1500]} 
             sizes={"100vw"} 
           />
         </swiper-slide>

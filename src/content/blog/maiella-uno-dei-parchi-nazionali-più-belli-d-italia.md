@@ -4,8 +4,8 @@ excerpt: a Maiella è una delle montagne più affascinanti d’Italia, situata n
 date: 2024-10-24T20:57:00
 thumbnail: /src/assets/img/cms/blog/Monte amaro.webp
 categoria:
-  - Luoghi
-  - Escrursioni
+  - luoghi
+  - escrursioni
 galleria:
   - src: /src/assets/img/cms/blog/Rifugio monte amaro.webp
     alt: Alba sul rifugio monte amaro

@@ -23,6 +23,6 @@ export default defineConfig({
   
    site: baseUrl,
   output: "hybrid",
-  redirects: { '/digital': '/digital/index.html' },
+  redirects: { '/digital': '/keystatic' },
   adapter: vercel(),
 });
