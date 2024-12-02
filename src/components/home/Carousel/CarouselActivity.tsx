@@ -51,10 +51,10 @@ const CarouselWrapper = ({ cards }: { cards: any}) => {
             <Image
                 title={card.title}
                 src={images[card.image].default.src}
-                alt={card.title}
-                width={600}
-                height={600}
-                loading="lazy"
+                alt={card.title+" slide"}
+                width={500}
+                height={500}
+                loading="eager"
                 className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
               />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
