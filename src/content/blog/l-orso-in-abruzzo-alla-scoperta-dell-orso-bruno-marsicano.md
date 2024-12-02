@@ -15,7 +15,6 @@ L’Abruzzo, una delle regioni più affascinanti e selvagge d’Italia, è anche
 L’orso bruno marsicano è una delle specie più rare al mondo e la sua sopravvivenza è minacciata da numerosi fattori, tra cui la perdita dell’habitat, il bracconaggio e il conflitto con le attività agricole. Si stima che la popolazione di orsi marsicani in Abruzzo sia composta da circa 50-60 individui, concentrati principalmente nel Parco Nazionale d’Abruzzo, Lazio e Molise (PNALM), ma anche in altre aree montuose della regione come il Parco Nazionale della Maiella. La sua presenza è legata alla disponibilità di ampie zone boschive e montane, lontane dai centri abitati, dove l’orso può muoversi liberamente e trovare il cibo necessario per sopravvivere.
 
 Grazie agli sforzi di conservazione, come quelli promossi dal Parco Nazionale d’Abruzzo e del Parco della Maiella insieme a dalle organizzazioni ambientaliste, la popolazione di orsi marsicani è leggermente aumentata negli ultimi anni. Tuttavia, la specie rimane in pericolo e la sua visione in natura è un’esperienza rara e preziosa. L’incontro con un orso è un’occasione straordinaria, ma va vissuto con rispetto per l’animale e per l’ambiente che lo ospita.
- 
 
 ### Dove vedere l’Orso Bruno in Abruzzo?
 
@@ -92,13 +91,13 @@ Il modo migliore per aumentare le probabilità di avvistamento dell’orso marsi
 #### 2. **Escursioni nelle prime ore del mattino o al tramonto**
 
 Gli orsi sono più attivi nelle prime ore del mattino e al tramonto, quindi se desideri avvistarli, pianifica le tue escursioni in questi momenti della giornata.
- 
+
 **[PRENOTA ORA](https://wa.me/message/VNFCLHFAMCJLI1) 👈**  
 
-** [SCOPRI DI PIU’👈](https://www.maiellaescursioni.it/)**
+**[SCOPRI DI PIU’👈](https://www.maiellaescursioni.it/)**
 
 Per scoprire altre attività e conoscere i sentieri più belli d’Abruzzo..
 
 Segui su Instagram: [@maiellaescursioni 👈 (Aggiornamenti su trekking ed escursioni)](https://www.instagram.com/maiellaescursioni/)
- 
+
 Samuele Santilli

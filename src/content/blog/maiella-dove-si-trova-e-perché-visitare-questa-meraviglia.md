@@ -33,7 +33,7 @@ A1 fino a Caianello e poi si prosegue in direzione Venafro-Roccaraso.
 
 ### In autobus
 
-**Autobus di linea:** compagnie **[Arpa]()** e **[Sangritana]()** che collegano i paesi del Parco con Sulmona, Chieti, Pescara, Lanciano e Guardiagrele.
+**Autobus di linea:** compagnie **Arpa** e **Sangritana** che collegano i paesi del Parco con Sulmona, Chieti, Pescara, Lanciano e Guardiagrele.
 
 ### In aereo
 
