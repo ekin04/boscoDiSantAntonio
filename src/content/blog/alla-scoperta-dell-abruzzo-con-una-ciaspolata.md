@@ -8,13 +8,22 @@ thumbnail: >-
   /src/assets/img/cms/blog/alla-scoperta-dell-abruzzo-con-una-ciaspolata/thumbnail.jpg
 categoria:
   - attivita
-galleria: []
+galleria:
+  - src: >-
+      /src/assets/img/cms/blog/alla-scoperta-dell-abruzzo-con-una-ciaspolata/galleria/0/src.jpg
+    alt: Albero innevato
+  - src: >-
+      /src/assets/img/cms/blog/alla-scoperta-dell-abruzzo-con-una-ciaspolata/galleria/1/src.jpg
+    alt: Gruppo ciaspolata
+  - src: >-
+      /src/assets/img/cms/blog/alla-scoperta-dell-abruzzo-con-una-ciaspolata/galleria/2/src.jpg
+    alt: Gruppo ciaspolata 2
 ---
 Se cerchi un’avventura invernale che coniughi natura, sport e tranquillità, una ciaspolata in Abruzzo è l’esperienza perfetta. Questa regione, spesso definita *il cuore verde d’Europa*, durante l’inverno si trasforma in un paradiso innevato, offrendo panorami mozzafiato e percorsi indimenticabili.
 
 ---
 
-#### Perché Scegliere l’Abruzzo per una Ciaspolata?
+### Perché Scegliere l’Abruzzo per una Ciaspolata?
 
 L'Abruzzo vanta tre parchi nazionali, un parco regionale e numerose riserve naturali, rendendolo una delle mete più affascinanti per chi ama la montagna. I percorsi innevati permettono di esplorare luoghi incontaminati e di immergersi in un silenzio surreale, interrotto solo dal suono delle ciaspole sulla neve fresca.
 
@@ -26,7 +35,7 @@ Tra i motivi per scegliere una ciaspolata in Abruzzo:
 
 ---
 
-#### Itinerari Imperdibili
+### Itinerari Imperdibili
 
 1. **Parco Nazionale della Majella**\
    La “montagna madre” dell’Abruzzo regala ciaspolate emozionanti, come quella che porta all’Eremo di San Bartolomeo in Legio. Un viaggio tra natura e spiritualità, con possibilità di avvistare cervi o tracce di lupi sulla neve.
@@ -35,7 +44,7 @@ Tra i motivi per scegliere una ciaspolata in Abruzzo:
 
 ---
 
-#### Cosa Portare con Sé
+### Cosa Portare con sé
 
 Per affrontare una ciaspolata in sicurezza, è fondamentale equipaggiarsi bene:
 
@@ -46,7 +55,7 @@ Per affrontare una ciaspolata in sicurezza, è fondamentale equipaggiarsi bene:
 
 ---
 
-#### Consigli per una Giornata Perfetta
+### Consigli per una Giornata Perfetta
 
 - **Parti presto**: i paesaggi all’alba o la luce del primo mattino sono mozzafiato.
 - **Affidati a una guida esperta**: soprattutto se sei alle prime armi o vuoi scoprire sentieri meno battuti.
@@ -54,7 +63,7 @@ Per affrontare una ciaspolata in sicurezza, è fondamentale equipaggiarsi bene:
 
 ---
 
-#### Un’esperienza da ricordare
+### Un’esperienza da ricordare
 
 Una ciaspolata in Abruzzo non è solo un’attività fisica, ma un’immersione totale nella bellezza e nella tranquillità della natura. È l’occasione perfetta per staccare dalla routine quotidiana, respirare aria pura e scoprire l’anima autentica di una regione che non smette mai di sorprendere.
 
