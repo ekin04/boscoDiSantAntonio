@@ -9,7 +9,7 @@
     },
     {
       "label": "Blog",
-      "path": "/blog",
+      "path": "/blog/",
       "icon": "mdi:blog-outline",
       "externalLink": false,
       "children": []

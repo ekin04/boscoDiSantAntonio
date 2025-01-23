@@ -19,7 +19,7 @@ import CategoryButton from "@components/Shared/CategoryButton.astro";
       {
         postOrdinati.map((article, index) => (
           <a
-            href={"/blog/" + article.slug}
+            href={"/blog/" + article.slug  + "/"}
             class={
               index === 0
                 ? "group px-2 sm:px-0 sm:col-span-2 md:col-span-1 xl:col-span-2"
