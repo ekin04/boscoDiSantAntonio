@@ -41,7 +41,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 const seasonImage = seasonImages[currentSeason];
 ---
 
-<div class="w-full h-dvh">
+<div class="w-full h-dvh bg-neutral-900">
   <!-- Swiper container for image slides -->
   <swiper-container
     effect="fade" 
@@ -51,6 +51,9 @@ const seasonImage = seasonImages[currentSeason];
     fade-effect-cross-fade="true" 
     allow-touch-move="false" 
     class="swiper-wrapper w-full bg-neutral-900 p-0 m-0 relative overflow-x-hidden"
+    data-aos-delay="400"
+    data-aos-duration="300"
+    data-aos="fade-in"
   >
     <!-- Iterate over season images and create slides -->
     {
