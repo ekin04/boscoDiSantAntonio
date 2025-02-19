@@ -1,39 +1,44 @@
 {
-  "slide": [
-    {
-      "title": "Area Faunistica del Cervo Gamberale",
-      "link": "https://www.maiellaescursioni.it/tour-item/area-faunistica-del-cervo-gamberale/",
-      "image": "/src/assets/img/cms/carosello/slide/0/image.webp"
-    },
-    {
-      "title": "Calendario Novembre 2024",
-      "link": "https://www.maiellaescursioni.it/tour-item/calendario-novembre-2024/",
-      "image": "/src/assets/img/cms/carosello/slide/1/image.webp"
-    },
-    {
-      "title": "Camoscio Appenninico Visita in area faunistica",
-      "link": "https://www.maiellaescursioni.it/tour-item/sulle-tracce-del-camoscio-appenninico",
-      "image": "/src/assets/img/cms/carosello/slide/2/image.webp"
-    },
-    {
-      "title": "Cima di Tavola Rotonda e Canyon della Sfischia",
-      "link": "https://www.maiellaescursioni.it/tour-item/il-canyon-della-sfischia-e-cima-di-tavola-rotonda-escursioni-sulla-maiella/",
-      "image": "/src/assets/img/cms/carosello/slide/3/image.webp"
-    },
-    {
-      "title": "Monte Amaro - La vetta più ambita della Maiella",
-      "link": "https://www.maiellaescursioni.it/tour-item/monte-amaro/",
-      "image": "/src/assets/img/cms/carosello/slide/4/image.jpg"
-    },
-    {
-      "title": "Orso Bruno - Trekking e Avvistamento",
-      "link": "https://www.maiellaescursioni.it/tour-item/scoprendo-l-orso-bruno-marsicano/",
-      "image": "/src/assets/img/cms/carosello/slide/5/image.webp"
-    },
-    {
-      "title": "Pernottamento in Rifugio e trekking",
-      "link": "https://www.maiellaescursioni.it/tour-item/pernottamento-in-rifugio-e-trekking",
-      "image": "/src/assets/img/cms/carosello/slide/6/image.webp"
-    }
-  ]
+    "slide": [
+        {
+            "title": "A – Escursioni Abruzzo 2025 | Vivere la Maiella | Calendario date",
+            "link": "https://www.maiellaescursioni.it/tour-item/escursioni-abruzzo-2025-vivere-montagna-calendario-date/",
+            "image": "/src/assets/img/cms/carosello/scraping/image_1_Testo-del-paragrafo-2.webp"
+        },
+        {
+            "title": "Ciaspolata a Palena (CH) – Quarto di Santa Chiara",
+            "link": "https://www.maiellaescursioni.it/tour-item/ciaspolata-a-palena-ch-quarto-di-santa-chiara/",
+            "image": "/src/assets/img/cms/carosello/scraping/image_2_WhatsApp-Image-2024-01-14-at-18.13.34.jpeg"
+        },
+        {
+            "title": "Ciaspolata a Pescocostanzo – Dal Bosco al Rifugio di Macchiaduni",
+            "link": "https://www.maiellaescursioni.it/tour-item/ciaspolata-pescocostanzo-bosco-rifugio-macchiaduni/",
+            "image": "/src/assets/img/cms/carosello/scraping/image_3_WhatsApp-Image-2025-01-16-at-08.55.36.webp"
+        },
+        {
+            "title": "Ciaspolata a Roccaraso (AQ) – L’ Altopiano delle 5 Miglia",
+            "link": "https://www.maiellaescursioni.it/tour-item/ciaspolata-a-roccaraso-aq-l-altopiano-delle-5-miglia/",
+            "image": "/src/assets/img/cms/carosello/scraping/image_4_20240112_092836.jpg"
+        },
+        {
+            "title": "Ciaspolata Abruzzo | Il Bosco delle Meraviglie di Roccaraso",
+            "link": "https://www.maiellaescursioni.it/tour-item/ciaspolata-abruzzo-bosco-delle-meraviglie/",
+            "image": "/src/assets/img/cms/carosello/scraping/image_5_WhatsApp-Image-2025-01-22-at-18.04.44.webp"
+        },
+        {
+            "title": "Gole di San Martino – Viaggio nel Geoparco dell’UNESCO",
+            "link": "https://www.maiellaescursioni.it/tour-item/gole-di-san-martino/",
+            "image": "/src/assets/img/cms/carosello/scraping/image_6_WhatsApp-Image-2023-10-02-at-21.20.16-e1698169894474.webp"
+        },
+        {
+            "title": "Pescocostanzo (AQ) – Ciaspolata al Bosco di Sant’Antonio",
+            "link": "https://www.maiellaescursioni.it/tour-item/pescocostanzo-aq-ciaspolata-al-bosco-di-sant-antonio/",
+            "image": "/src/assets/img/cms/carosello/scraping/image_7_20240122_120815.webp"
+        },
+        {
+            "title": "Roccaraso | Ciaspolata dagli Impianti sciistici di Pizzalto",
+            "link": "https://www.maiellaescursioni.it/tour-item/roccaraso-ciaspolata-impianti-sciistici-pizzalto/",
+            "image": "/src/assets/img/cms/carosello/scraping/image_8_WhatsApp-Image-2025-01-17-at-20.18.04.webp"
+        }
+    ]
 }
