@@ -61,7 +61,7 @@ def main():
         print("Nessun item (slide) trovato all'interno del container.")
         return
 
-    # Definizione della struttura predefinita (senza interazione con l'utente)
+    # Definizione della struttura predefinita
     struttura = {
         "h4": "title",
         "a": "link",
@@ -72,7 +72,7 @@ def main():
         print(f"  {tag} -> {nome}")
 
     # Applicazione della struttura a tutte le slide
-    items = []  # Array di oggetti (un oggetto per slide)
+    items = []
     for slide in slides:
         obj = {}
         for tag, var_name in struttura.items():
@@ -86,7 +86,7 @@ def main():
                 else:
                     contenuto = elemento.get_text(strip=True)
             else:
-                contenuto = ""  # Se l'elemento non è presente nella slide
+                contenuto = ""
             obj[var_name] = contenuto
         items.append(obj)
 
@@ -98,9 +98,9 @@ def main():
             print(f"  {key}: {val}")
         print("---------")
 
-    # Salvataggio delle immagini localmente, se presente l'elemento "image"
+    # Salvataggio delle immagini localmente
     if "img" in struttura:
-        save_dir = "../src/assets/img/cms/carosello/scraping"  # Cartella dove salvare le immagini
+        save_dir = "../src/assets/img/cms/carosello/scraping"
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
         img_key = struttura["img"]
@@ -108,28 +108,25 @@ def main():
             image_url = item.get(img_key, "")
             if image_url:
                 base_name = os.path.basename(image_url.split('?')[0])
-                filename = f"image_{index+1}_{base_name}"
+                filename = f"image_{index + 1}_{base_name}"
                 local_path = download_image(image_url, save_dir, filename)
                 if local_path:
-                    # Lasciamo il percorso fisico inalterato per il salvataggio dell'immagine
-                    item[img_key] = local_path
+                    # Convert to web-friendly path (forward slashes) and remove leading ".."
+                    web_path = local_path.replace("\\", "/")
+                    if web_path.startswith(".."):
+                        web_path = web_path[2:]
+                    item[img_key] = web_path
 
-    # Preparazione dei dati per il file JSON: rimuovo i due puntini iniziali dal percorso dell'immagine,
-    # lasciando inalterate le barre (se presenti).
-    items_for_json = []
-    for item in items:
-        item_copy = item.copy()  # Copia per non modificare l'originale
-        if "image" in item_copy and item_copy["image"].startswith(".."):
-            item_copy["image"] = item_copy["image"][2:]
-        items_for_json.append(item_copy)
+    # Preparazione dei dati per il file JSON
+    items_for_json = [item.copy() for item in items]
 
-    # Salvataggio in JSON in una cartella personalizzata
-    json_dir = "../src/content/carousel"  # Cartella dove salvare il file JSON
+    # Salvataggio in JSON
+    json_dir = "../src/content/carousel"
     if not os.path.exists(json_dir):
         os.makedirs(json_dir)
-    file_name = os.path.join(json_dir, "caroselloattivita.json")  # Percorso completo del file JSON
+    file_name = os.path.join(json_dir, "caroselloattivita.json")
 
-    nome_array = "slide"  # Nome predefinito per l'array degli oggetti
+    nome_array = "slide"
     data = {nome_array: items_for_json}
     try:
         with open(file_name, "w", encoding="utf-8") as f:
