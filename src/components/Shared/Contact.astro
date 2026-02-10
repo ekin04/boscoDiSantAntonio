@@ -3,9 +3,8 @@
   tabindex="-1"
   aria-hidden="true"
   class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-dvh max-h-full bg-slate-900/50 backdrop-blur-lg"
-  
 >
-  <div class="relative p-4 w-full max-w-md max-h-full ">
+  <div class="relative p-4 w-full max-w-md max-h-full">
     <!-- Modal content -->
     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
       <!-- Modal header -->
@@ -127,30 +126,41 @@
           </div>
           <button
             type="submit"
-            class="w-full text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg px-5 py-2.5 text-center"
+            class="w-full text-white bg-primary hover:bg-primary-hover focus:ring-4 focus:outline-none focus:ring-primary/30 font-medium rounded-lg px-5 py-2.5 text-center"
             >Invia messaggio</button
           >
         </form>
         <script is:inline>
-           document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Previene il comportamento di submit predefinito
+          document
+            .getElementById("contactForm")
+            .addEventListener("submit", function (event) {
+              event.preventDefault(); // Previene il comportamento di submit predefinito
 
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const data = document.getElementById("data").value;
-    const [yyyy, mm, dd] = data.split("-");
-    const formattedDate = `${dd}-${mm}-${yyyy}`;
+              const nome = document.getElementById("nome").value;
+              const email = document.getElementById("email").value;
+              const data = document.getElementById("data").value;
+              const [yyyy, mm, dd] = data.split("-");
+              const formattedDate = `${dd}-${mm}-${yyyy}`;
 
-    const messaggio = document.getElementById("messaggio").value;
-    const newsletter= document.getElementById("newletter").checked ? "%0A%0ANewsletter%3A%20Aggiungimi%20al%20gruppo%20whatsapp" : "";
-    
+              const messaggio = document.getElementById("messaggio").value;
+              const newsletter = document.getElementById("newletter").checked
+                ? "%0A%0ANewsletter%3A%20Aggiungimi%20al%20gruppo%20whatsapp"
+                : "";
 
+              const link =
+                "https://wa.me/393761594011/?text=Nome%3A%20" +
+                encodeURIComponent(nome) +
+                "%0AEmail%3A%20" +
+                encodeURIComponent(email) +
+                "%0AData%20Escursione%3A%20" +
+                encodeURIComponent(formattedDate) +
+                "%0AMessaggio%3A%20" +
+                encodeURIComponent(messaggio) +
+                newsletter;
 
-    const link = "https://wa.me/393761594011/?text=Nome%3A%20"+ encodeURIComponent(nome) + "%0AEmail%3A%20"+ encodeURIComponent(email) + "%0AData%20Escursione%3A%20"+ encodeURIComponent(formattedDate) + "%0AMessaggio%3A%20"+ encodeURIComponent(messaggio) + newsletter;
-
-    window.open(link, '_blank'); // Apre il link in una nuova scheda
-});
-            </script>
+              window.open(link, "_blank"); // Apre il link in una nuova scheda
+            });
+        </script>
       </div>
     </div>
   </div>

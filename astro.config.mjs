@@ -1,28 +1,26 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import { siteConfig } from "./siteConfig";
+
+import react from "@astrojs/react";
+import markdoc from "@astrojs/markdoc";
+import keystatic from "@keystatic/astro";
+import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
-import vercel from "@astrojs/vercel/serverless";
-import partytown from "@astrojs/partytown";
-import react from "@astrojs/react";
-import { baseUrl, commitUrl } from "./config";
+import vercel from "@astrojs/vercel";
 
-import markdoc from "@astrojs/markdoc";
-import keystatic from '@keystatic/astro'
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon(), sitemap({
-    customPages: [commitUrl],
-    filter: (page) =>
-      page !== `${baseUrl}/cookie_policy/` && 
-      page !== `${baseUrl}/privacy_policy/`,
+  output: "static",
+  integrations: [react(), markdoc(), keystatic(), icon(), sitemap()],
+  site: siteConfig.site.baseUrl,
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  adapter: vercel({
+    isr: true,
   }),
-   partytown(), react(), markdoc(),keystatic()],
-  
-   site: baseUrl,
-  output: "hybrid",
-  redirects: { '/digital': '/keystatic' },
-  adapter: vercel(),
+  redirects: {
+    "/digital": "/keystatic",
+  },
 });

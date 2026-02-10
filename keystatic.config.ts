@@ -1,6 +1,7 @@
 import { config, fields, collection, singleton } from "@keystatic/core";
 import { defaultTitle, keyStaticProject } from "./config";
 import React from "react";
+import { colorPickerField } from "./keystatic/components/ColorPicker";
 
 export default config({
   storage: import.meta.env.DEV === true ? { kind: "local" } : { kind: "cloud" },
@@ -18,7 +19,7 @@ export default config({
     navigation: {
       Blog: ["blog", "categorie"],
       Home: ["primavera", "autunno", "inverno", "caroselloHome"],
-      Impostazioni: ["navbarHeader"],
+      Impostazioni: ["navbarHeader", "settings"],
     },
   },
 
@@ -283,6 +284,15 @@ export default config({
             itemLabel: (props) => props.fields.alt.value,
           }
         ),
+      },
+    }),
+    settings: singleton({
+      label: "⚙️ Settings",
+      path: "src/content/settings",
+      format: { data: "json" },
+      schema: {
+        color: colorPickerField({ label: 'Colore', defaultValue: '#22c55e', description: 'Colore principale, applicato a bottoni e link' }),
+        colorHover: colorPickerField({ label: 'Colore Hover', defaultValue: '#16a34a', description: 'Colore quando si passa sopra con il mouse' }),
       },
     }),
   },

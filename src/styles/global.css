@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+}

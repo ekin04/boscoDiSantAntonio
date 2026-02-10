@@ -1,11 +1,12 @@
 ---
 import Footer from "../components/Layout/Footer.astro";
 import "aos/dist/aos.css";
+import "../styles/global.css";
 import Seo from "@components/Layout/Seo.astro";
 import Analytics from "@components/Layout/Analytics.astro";
-import { ViewTransitions } from "astro:transitions";
 import Contact from "@components/Shared/Contact.astro";
 import Navbar from "@components/Layout/Navbar.astro";
+import settings from "../content/settings.json";
 interface Props {
   titolo: string;
   descrizione: string;
@@ -20,16 +21,28 @@ const { titolo, descrizione, immagine, index, data, navbar } = Astro.props;
 <!doctype html>
 <html lang="it" class="scroll-smooth">
   <head>
-    <Seo titolo={titolo} descrizione={descrizione} immagine={immagine} index={index} data={data} />
+    <style
+      is:global
+      define:vars={{
+        primary: settings.color,
+        "primary-hover": settings.colorHover,
+      }}
+    ></style>
+    <Seo
+      titolo={titolo}
+      descrizione={descrizione}
+      immagine={immagine}
+      index={index}
+      data={data}
+    />
     <Analytics />
-    <ViewTransitions />
     <slot name="head" />
   </head>
   <body class="overflow-x-hidden flex flex-col min-h-screen">
-    <Navbar hidden={navbar}/>
-    <main class="flex-grow">
+    <Navbar hidden={navbar} />
+    <main class="grow">
       <slot />
-      <Contact/>
+      <Contact />
     </main>
     <Footer />
   </body>

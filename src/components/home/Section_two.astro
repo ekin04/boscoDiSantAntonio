@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import mappa from "@img/landing/mappa.png"
+import mappa from "@img/landing/mappa.png";
 ---
 
 <!-- Dove si trova Section -->
@@ -10,21 +10,20 @@ import mappa from "@img/landing/mappa.png"
   class="py-16 px-4 md:px-8 bg-slate-100 overflow-x-hidden flex justify-center items-center"
 >
   <div class="max-w-5xl mx-auto">
-    
     <div class="flex flex-col md:flex-row items-center gap-8">
       <div class="md:w-1/2" data-aos="fade-in" data-aos-delay="500">
         <h2
-      class="text-3xl md:text-4xl font-bold mb-8 text-gray-800 flex items-center"
-      data-aos="fade-left"
-    >
-      <Icon
-        name="mdi:map-search-outline"
-        class="mr-2 text-green-500 text-6xl"
-        data-aos="fade-down"
-        data-aos-anchor-placement="top-center"
-      />
-      Dove si trova
-    </h2>
+          class="text-3xl md:text-4xl font-bold mb-8 text-gray-800 flex items-center"
+          data-aos="fade-left"
+        >
+          <Icon
+            name="mdi:map-search-outline"
+            class="mr-2 text-primary text-6xl"
+            data-aos="fade-down"
+            data-aos-anchor-placement="top-center"
+          />
+          Dove si trova
+        </h2>
         <p class="text-lg mb-4">
           Siamo in Abruzzo, area italiana che vanta il titolo di Regione Verde
           d'Europa (ricoperta per più del 30% da parchi nazionali, riserve
@@ -39,14 +38,18 @@ import mappa from "@img/landing/mappa.png"
         </p>
       </div>
       <div class="md:w-1/2 w-full h-96">
-        <a href="https://maps.app.goo.gl/c38zuajVxTvN8WrB7" target="_blank" rel="nofollow">
-        <Image
-          alt={"Mappa bosco di sant'antonio"}
-          src={mappa}
-          class="w-full h-full rounded-xl shadow-lg object-cover object-center"
-          data-aos="zoom-in"
-          data-aos-delay="700"
-          aria-label="Mappa bosco di sant'antonio"
+        <a
+          href="https://maps.app.goo.gl/c38zuajVxTvN8WrB7"
+          target="_blank"
+          rel="nofollow"
+        >
+          <Image
+            alt={"Mappa bosco di sant'antonio"}
+            src={mappa}
+            class="w-full h-full rounded-xl shadow-lg object-cover object-center"
+            data-aos="zoom-in"
+            data-aos-delay="700"
+            aria-label="Mappa bosco di sant'antonio"
           />
         </a>
         <!-- <iframe

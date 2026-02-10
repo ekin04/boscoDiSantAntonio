@@ -13,9 +13,9 @@ import ImageAstro from "@components/Shared/ImageAstro.astro";
       </h2>
       <div class="space-y-5">
         {postFiltrati.map((i, index) => (
-          <a href={`/blog/${i.slug}/`} class="block group hover:text-green-500 transition">
+          <a href={`/blog/${i.slug}/`} class="block group hover:text-primary transition">
             <div class="flex items-center overflow-x-hidden">
-              <div class="flex-shrink-0 h-28 w-28 rounded-md overflow-hidden relative"
+              <div class="shrink-0 h-28 w-28 rounded-md overflow-hidden relative"
               data-aos="fade-right"
               data-aos-delay={(index + 1) * 100}>
                  <ImageAstro
@@ -28,7 +28,7 @@ import ImageAstro from "@components/Shared/ImageAstro.astro";
               <div class="ml-4 flex justify-center flex-col"
               data-aos="fade-left"
               data-aos-delay={(index + 1) * 100}>
-                <h3 class="text-lg line-clamp-2 font-medium text-gray-900 group-hover:text-green-500 transition-colors leading-tight">
+                <h3 class="text-lg line-clamp-2 font-medium text-gray-900 group-hover:text-primary transition-colors leading-tight">
                   {i.data.title}
                 </h3>
                 <p class="text-sm line-clamp-2 text-gray-500 my-1">{i.data.excerpt}</p>
