@@ -55,7 +55,7 @@ const CarouselWrapper = ({ cards }: { cards: any}) => {
                 height={500}
                 className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-110"
               />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
             <div className="absolute bottom-12 right-4 p-4 w-5/6">
               <h2 className="mb-2 text-2xl text-pretty text-right font-bold text-white transition-transform duration-500 group-hover:translate-x-2">
                 {card.title}
@@ -64,8 +64,8 @@ const CarouselWrapper = ({ cards }: { cards: any}) => {
           </a>
         </SwiperSlide>
       ))}
-      <div className="swiper-button-prev font-bold backdrop-blur-lg bg-stone-900/80 rounded-full p-6 mr-5 after:!text-[25px] after:text-primary hover:bg-stone-700/80 transition"></div>
-      <div className="swiper-button-next font-bold backdrop-blur-lg bg-stone-900/80 rounded-full p-6 mr-5 after:!text-[25px] after:text-primary hover:bg-stone-700/80 transition"></div>
+      <div className="swiper-button-prev font-bold backdrop-blur-lg bg-stone-900/80 rounded-full p-6 mr-5 after:text-[25px]! after:text-primary hover:bg-stone-700/80 transition"></div>
+      <div className="swiper-button-next font-bold backdrop-blur-lg bg-stone-900/80 rounded-full p-6 mr-5 after:text-[25px]! after:text-primary hover:bg-stone-700/80 transition"></div>
     </Swiper>
   );
 };

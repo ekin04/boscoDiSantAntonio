@@ -37,7 +37,7 @@ export default config({
             label: "Titolo",
             validation: {
               isRequired: true,
-              length: { max: 60 },
+              length: { max: 80 },
             },
           },
         }),
