@@ -5,12 +5,12 @@ title: >-
 excerpt: >-
   Esplora l'Altopiano delle Cinquemiglia in Abruzzo, un paesaggio mozzafiato che
   cambia con le stagioni. Trekking, natura e tranquillità ti aspettano.
-date: 2025-11-05T01:31:00.000Z
+date: 2025-11-05T19:00:00.000Z
 thumbnail: >-
   /src/assets/img/cms/blog/alla-scoperta-dell-altopiano-delle-cinquemiglia-un-angolo-nascosto-dell-abruzzo/thumbnail.jpg
 categoria:
-  - escrursioni
   - luoghi
+  - escrursioni
 galleria: []
 ---
 ![](/img/blogEntry/alla-scoperta-dell-altopiano-delle-cinquemiglia-un-angolo-nascosto-dell-abruzzo/20240112_093745-768x432.jpg)
