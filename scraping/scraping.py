@@ -6,16 +6,26 @@ import json
 def download_image(image_url, save_dir, filename):
     """
     Scarica l'immagine dalla URL e la salva in save_dir con il nome filename.
-    Restituisce il percorso locale se il download va a buon fine, altrimenti None.
+    Se il file esiste già, non lo riscarica.
+    Restituisce il percorso locale se presente o scaricato, altrimenti None.
     """
+    filepath = os.path.join(save_dir, filename)
+
+    # ✅ NUOVO: controllo se esiste già
+    if os.path.exists(filepath):
+        print(f"Immagine già presente, salto download: {filename}")
+        return filepath
+
     try:
         response = requests.get(image_url, stream=True)
         response.raise_for_status()
-        filepath = os.path.join(save_dir, filename)
+
         with open(filepath, 'wb') as f:
             for chunk in response.iter_content(1024):
                 f.write(chunk)
+
         return filepath
+
     except Exception as e:
         print(f"Errore nel scaricare l'immagine {image_url}: {e}")
         return None
