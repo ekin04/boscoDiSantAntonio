@@ -1,0 +1,32 @@
+name: Seasonal Deploy
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Primavera (20 marzo)
+    - cron: "0 9 20 3 *"
+    # Estate (21 giugno)
+    - cron: "0 9 21 6 *"
+    # Autunno (23 settembre)
+    - cron: "0 9 23 9 *"
+    # Inverno (21 dicembre)
+    - cron: "0 9 21 12 *"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Vercel Deploy
+        run: |
+          curl -X POST https://api.vercel.com/v13/deployments \
+          -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "name": "boscoDiSantAntonio",
+            "gitSource": {
+              "type": "github",
+              "repo": "ekin04/boscoDiSantAntonio",
+              "ref": "main"
+            }
+          }'
