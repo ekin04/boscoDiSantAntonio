@@ -1,7 +1,7 @@
 export const siteConfig = {
   site: {
-    baseUrl: "https://goledisanmartino.it",
-    defaultTitle: "Gole di San Martino",
+    baseUrl: "https://boscodisantantonio.it",
+    defaultTitle: "Bosco di Sant'Antonio",
     favicon:
       "https://www.maiellaescursioni.it/wp-content/uploads/2023/10/favicon-png-maiella-escursioni.png",
   },
@@ -12,5 +12,5 @@ export const siteConfig = {
     logo: "https://www.maiellaescursioni.it/wp-content/uploads/2023/10/favicon-png-maiella-escursioni.png",
     phone: "+393761594011",
   },
-  keystaticProject: "maiella-escursioni/goledisanmartino",
+  keystaticProject: "maiella-escursioni/boscodisantantonio",
 };

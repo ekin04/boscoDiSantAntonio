@@ -3,9 +3,14 @@ import ContactButton from "@components/Shared/ContactButton.astro";
 import Swiper from "@components/Shared/Swiper.astro";
 import { Picture } from "astro:assets";
 
-const autunno = await Astro.glob("../../assets/img/hero/autunno/*");
-const primavera = await Astro.glob("../../assets/img/hero/primavera/*");
-const inverno = await Astro.glob("../../assets/img/hero/inverno/*");
+const autunnoModules = import.meta.glob<any>("../../assets/img/hero/autunno/*", { eager: true });
+const autunno = Object.values(autunnoModules);
+
+const primaveraModules = import.meta.glob<any>("../../assets/img/hero/primavera/*", { eager: true });
+const primavera = Object.values(primaveraModules);
+
+const invernoModules = import.meta.glob<any>("../../assets/img/hero/inverno/*", { eager: true });
+const inverno = Object.values(invernoModules);
 
 const getSeason = () => {
   const now = new Date();
@@ -42,7 +47,7 @@ const seasonImage = seasonImages[currentSeason];
   <div class=" bg-neutral-900 p-0 m-0 relative w-full">
     <!-- Slides -->
     {
-      seasonImage.map((image, index) => (
+      seasonImage.map((image: any, index: number) => (
         <div class="swiper-slide min-h-dvh relative flex justify-center items-center w-full">
           <Picture
             src={image.default}

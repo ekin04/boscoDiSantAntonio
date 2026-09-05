@@ -5,3 +5,22 @@
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
 }
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 25px !important;
+  color: var(--primary, #22c55e) !important;
+}
+
+.zoom {
+  animation: zoom 8s infinite alternate;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

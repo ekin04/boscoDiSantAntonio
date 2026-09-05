@@ -18,7 +18,7 @@ const { posts, isFirstPage = false } = Astro.props;
       {
         posts.map((article: any, index: number) => (
           <a
-            href={"/blog/" + article.slug + "/"}
+            href={"/blog/" + article.id + "/"}
             class={
               isFirstPage && index === 0
                 ? "group px-2 sm:px-0 sm:col-span-2 md:col-span-3 lg:col-span-2"

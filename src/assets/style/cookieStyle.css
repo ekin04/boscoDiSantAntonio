@@ -39,7 +39,7 @@
     --cc-pm-toggle-border-radius: var(--cc-btn-border-radius);
 }
 
-.cc--light-funky #cc-main .toggle__icon:after {
+.cc--light-funky #cc-main .toggle__icon::after {
     border-radius: var(--cc-btn-border-radius);
 }
 

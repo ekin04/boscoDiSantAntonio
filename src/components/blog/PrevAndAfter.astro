@@ -7,7 +7,7 @@ const posts = (await getCollection("blog")).sort(
 );
 
 const currentPostIndex = posts.findIndex(
-  (post) => post.slug == Astro.params.slug,
+  (post) => post.id == Astro.params.slug,
 );
 const previousPost =
   currentPostIndex + 1 === posts.length
@@ -23,7 +23,7 @@ import { Icon } from "astro-icon/components";
     <div class="flex flex-col w-full items-center py-8 gap-4">
       {nextPost && (
         <a
-          href={`/blog/${nextPost.slug}/`}
+          href={`/blog/${nextPost.id}/`}
           class="block mr-auto group hover:text-primary hover:-translate-x-1 transition max-w-lg"
         >
           <div class="flex items-center overflow-x-hidden w-full">
@@ -62,7 +62,7 @@ import { Icon } from "astro-icon/components";
       )}
       {previousPost && (
         <a
-          href={`/blog/${previousPost.slug}/`}
+          href={`/blog/${previousPost.id}/`}
           class="block ml-auto group hover:text-primary hover:translate-x-1 transition max-w-lg"
         >
           <div class="flex items-center overflow-x-hidden w-full">

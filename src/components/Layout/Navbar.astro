@@ -142,8 +142,9 @@ const { hidden = false } = Astro.props;
 </script>
 <script>
   import { toggle } from "@assets/js/toggle";
-  toggle("#mobileButton", "#navbar-stick");
-  document.addEventListener("astro:page-load", () =>
-    toggle("#mobileButton", "#navbar-sticky"),
-  );
+  function initMobileMenu() {
+    toggle("#mobileButton", "#navbar-sticky");
+  }
+  initMobileMenu();
+  document.addEventListener("astro:page-load", initMobileMenu);
 </script>

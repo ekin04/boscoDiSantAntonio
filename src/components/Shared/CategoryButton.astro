@@ -3,8 +3,8 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 const { titolo } = Astro.props;
 
-const entry = await getCollection("categorie", ({slug}:{slug: string}) => {
-  return slug === titolo;
+const entry = await getCollection("categorie", (category) => {
+  return category.id === titolo;
 }); 
 ---
 <div

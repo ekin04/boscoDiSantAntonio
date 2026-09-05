@@ -49,7 +49,7 @@ const CarouselWrapper = ({ cards }: { cards: any}) => {
           >
             <Image
                 title={card.title}
-                src={images[card.image].default.src}
+                src={images[card.image]?.default?.src || card.image}
                 alt={card.title+" slide"}
                 width={500}
                 height={500}
@@ -64,8 +64,8 @@ const CarouselWrapper = ({ cards }: { cards: any}) => {
           </a>
         </SwiperSlide>
       ))}
-      <div className="swiper-button-prev font-bold backdrop-blur-lg bg-stone-900/80 rounded-full p-6 mr-5 after:text-[25px]! after:text-primary hover:bg-stone-700/80 transition"></div>
-      <div className="swiper-button-next font-bold backdrop-blur-lg bg-stone-900/80 rounded-full p-6 mr-5 after:text-[25px]! after:text-primary hover:bg-stone-700/80 transition"></div>
+      <div className="swiper-button-prev font-bold backdrop-blur-lg bg-stone-900/80 rounded-full p-6 mr-5 hover:bg-stone-700/80 transition"></div>
+      <div className="swiper-button-next font-bold backdrop-blur-lg bg-stone-900/80 rounded-full p-6 mr-5 hover:bg-stone-700/80 transition"></div>
     </Swiper>
   );
 };

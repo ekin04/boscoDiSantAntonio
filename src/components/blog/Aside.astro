@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 const slug = Astro.params.slug 
 const allPost = await getCollection("blog");
 const postOrdinati = allPost.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-const postFiltrati = postOrdinati.filter((post) => post.slug !== slug).slice(0, 4);
+const postFiltrati = postOrdinati.filter((post) => post.id !== slug).slice(0, 4);
 import ImageAstro from "@components/Shared/ImageAstro.astro";
 ---
 
@@ -13,7 +13,7 @@ import ImageAstro from "@components/Shared/ImageAstro.astro";
       </h2>
       <div class="space-y-5">
         {postFiltrati.map((i, index) => (
-          <a href={`/blog/${i.slug}/`} class="block group hover:text-primary transition">
+          <a href={`/blog/${i.id}/`} class="block group hover:text-primary transition">
             <div class="flex items-center overflow-x-hidden">
               <div class="shrink-0 h-28 w-28 rounded-md overflow-hidden relative"
               data-aos="fade-right"
