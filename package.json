@@ -2,6 +2,9 @@
   "name": "boscodisantantonio",
   "type": "module",
   "version": "1.0",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
