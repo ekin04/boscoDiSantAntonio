@@ -1,5 +1,5 @@
 ---
-title: '# Foliage nel Bosco di Sant''Antonio'
+title: Foliage nel Bosco di Sant'Antonio
 excerpt: >
   Foliage nel Bosco di Sant'Antonio: scopri i colori dell'autunno a
   Pescocostanzo tra faggi monumentali, natura e fauna. Vivi l'esperienza con una
