@@ -1,5 +1,5 @@
 ---
-title: '# Ciaspolate nel Bosco di Sant''Antonio'
+title: Ciaspolate nel Bosco di Sant'Antonio
 excerpt: >-
   Ciaspolate nel Bosco di Sant'Antonio a Pescocostanzo: scopri neve, natura e
   alberi monumentali con una guida. Attrezzatura, abbigliamento e consigli
