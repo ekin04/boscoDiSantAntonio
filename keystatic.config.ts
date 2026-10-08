@@ -89,7 +89,9 @@ export default config({
               directory: "src/assets/img/cms/blog",
               publicPath: "/src/assets/img/cms/blog",
             }),
-            alt: fields.text({ label: "Alt Text" }),
+            alt: fields.text({ label: "Alt Text", validation: { isRequired: true }, 
+              description: "Inserisci una breve descrizione per l'immagine, per accessibilità e SEO.",
+             }),
           }),
           {
             label: "Galleria di Immagini",

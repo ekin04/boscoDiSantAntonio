@@ -11,6 +11,7 @@ categoria:
 galleria:
   - src: >-
       /src/assets/img/cms/blog/ciaspolate-nel-bosco-di-sant-antonio/galleria/0/src.webp
+    alt: Gruppo di persone nel bosco innevato
 ---
 # Ciaspolate nel Bosco di Sant'Antonio: vivere la neve a Pescocostanzo
 
