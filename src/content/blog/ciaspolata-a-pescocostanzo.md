@@ -158,5 +158,3 @@ L’inverno è il momento ideale per rallentare, respirare e lasciarsi sorprende
 **Sito web:** [www.maiellaescursioni.it&nbsp;](https://www.maiellaescursioni.it/)
 
 **Email:** info@maiellaescursioni.it
-
-`<a href="https://wa.me/393761594011" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#25D366;color:#fff;padding:14px 24px;border-radius:6px;text-decoration:none;font-weight:bold;font-family:Arial,sans-serif;">Chatta con noi su WhatsApp</a>`\
